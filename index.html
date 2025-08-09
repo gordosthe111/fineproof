@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FineProof AI — Never Fail a Health Inspection Again</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --bg:#0A1D37; --gold:#FFD700; --ink:#0A1D37; --muted:#4b5563; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink)}
+    .nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;z-index:10}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:36px;height:36px;border-radius:12px;background:var(--bg);display:grid;place-items:center;color:var(--gold);font-weight:900}
+    .links a{margin-left:14px;text-decoration:none;color:var(--ink);font-weight:600}
+    .container{max-width:1120px;margin:0 auto;padding:22px}
+    .hero{background:linear-gradient(180deg,#fff 0%,#F7FAFC 100%);padding:60px 0}
+    .badge{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;padding:4px 10px;border-radius:999px;font-size:12px}
+    h1{font-size:44px;line-height:1.1;margin:.4rem 0}
+    p.big{font-size:20px;max-width:760px}
+    .btn{background:var(--bg);color:#fff;border:none;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .btn-outline{background:#fff;color:var(--bg);border:2px solid var(--bg);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .row{display:grid;gap:16px}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(10,29,55,.08)}
+    .footer{font-size:14px;color:var(--muted);padding:40px 0}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{padding:12px;border-bottom:1px solid #eee;text-align:left;font-size:14px}
+    .kpi{font-size:28px;font-weight:900}
+    input,select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px}
+    .grid2{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:800px){.cols-3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <div class="logo">FP</div>
+      <strong>FineProof AI</strong>
+    </div>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#demo">Demo</a>
+    </div>
+  </nav>
+
+  <!-- Landing -->
+  <section id="home" class="hero">
+    <div class="container">
+      <span class="badge">Founders Club — $197/mo (first 100)</span>
+      <h1>Never Fail a VIC Health Inspection Again</h1>
+      <p class="big">We track every regulation change for restaurants & cafés, send you instant alerts, and auto-generate your compliance paperwork so you’re always inspection-ready.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="container">
+    <div class="row cols-3">
+      <div class="card"><h3>Rule Monitoring</h3><p>Daily scans of VIC Food Safety & local council bulletins.</p></div>
+      <div class="card"><h3>Paperwork Done</h3><p>We auto-generate fridge logs, cleaning schedules, pest control reports & more.</p></div>
+      <div class="card"><h3>Inspection Alerts</h3><p>SMS/email reminders before inspections so nothing is missed.</p></div>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section id="cta" class="container">
+    <div class="card">
+      <h3>Join the Founders Club</h3>
+      <p>Lock in $197/month for life (first 100 only).</p>
+      <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <div class="grid2">
+          <div><label>Full Name</label><input name="name" required></div>
+          <div><label>Business Name</label><input name="business" required></div>
+          <div><label>Email</label><input type="email" name="email" required></div>
+          <div><label>Mobile</label><input name="mobile" required></div>
+        </div>
+        <button class="btn" style="margin-top:12px">Reserve Your Spot</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Demo Alerts -->
+  <section id="demo" class="container">
+    <h2>Sample Alerts</h2>
+    <div class="card">
+      <p><strong>9 Aug 2025 — VIC Food Safety Code Update</strong><br>Fridge/freezer temps must be logged twice daily. Fine up to $5,000.</p>
+      <p><strong>28 Jul 2025 — Staff Hygiene Training</strong><br>New hires must complete training within 7 days of start date.</p>
+      <p><strong>10 Jul 2025 — Pest Control</strong><br>Monthly pest inspections now mandatory, logs kept for 12 months.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer container">© <span id="year"></span> FineProof AI — Stay compliant. Stay open.</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
