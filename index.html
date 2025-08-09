@@ -65,8 +65,8 @@
     <div class="card">
       <h3>Join the Founders Club</h3>
       <p>Lock in $197/month for life (first 100 only).</p>
-      <form action="https://formspree.io/f/myzplknk" method="POST" onsubmit="showThankYou(event)"<script>
-
+      <!-- FIXED: removed stray <script> and added onsubmit handler -->
+      <form action="https://formspree.io/f/myzplknk" method="POST" onsubmit="showThankYou(event)">
         <div class="grid2">
           <div><label>Full Name</label><input name="name" required></div>
           <div><label>Business Name</label><input name="business" required></div>
@@ -90,6 +90,27 @@
 
   <!-- Footer -->
   <footer class="footer container">© <span id="year"></span> FineProof AI — Stay compliant. Stay open.</footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Inline thank-you flow (keeps user on your site)
+    function showThankYou(event){
+      event.preventDefault();
+      const form = event.target;
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(r => {
+        if (!r.ok) throw new Error('Submit failed');
+        form.innerHTML = '<h2>✅ Thanks! We’ll be in touch soon.</h2><p>You’ve locked in your Founders Club spot.</p>';
+      })
+      .catch(() => {
+        form.innerHTML = '<h2>❌ Oops! Something went wrong.</h2><p>Please email us: <a href="mailto:lachiegordon8@gmail.com">lachiegordon8@gmail.com</a></p>';
+      });
+    }
+  </script>
 </body>
 </html>
